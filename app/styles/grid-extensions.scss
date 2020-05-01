@@ -1,0 +1,31 @@
+.grid {
+  column-gap: $grid-gutter-width;
+  grid-gap: $grid-gutter-width;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.grid::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.grid > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+@include media-breakpoint-up(md) {
+  .grid-cols-md-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .grid-cols-lg-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

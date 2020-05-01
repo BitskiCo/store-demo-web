@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Wine 1",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  },
+  {
+    "id": 2,
+    "name": "Wine 2",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  },
+  {
+    "id": 3,
+    "name": "Wine 3",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  },
+  {
+    "id": 4,
+    "name": "Wine 4",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  },
+  {
+    "id": 5,
+    "name": "Wine 5",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  },
+  {
+    "id": 6,
+    "name": "Wine 6",
+    "description": "This wine is ripe, smooth, and delectable. Enjoy its lovely aromas and flavors of ripe fruit and oak with a well-seasoned roast leg of lamb.",
+    "imageUrl": "https://imgplaceholder.com/360x250"
+  }
+]
