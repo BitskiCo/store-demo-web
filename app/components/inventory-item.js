@@ -11,14 +11,22 @@ export default class InventoryItemComponent extends Component {
   @tracked error;
   @tracked purchased = false;
 
+  get price() {
+    if (this.args.item) {
+      return (this.args.item.price / 100).toFixed(2);
+    } else {
+      return '';
+    }
+  }
+
   @action
   async buy() {
     this.error = false;
-    let { title, productId } = this.args.item;
+    let { title, productId, price } = this.args.item;
 
     try {
       let user = await this.bitski.getSignedInUser();
-      let token = await this.stripe.showCheckoutForm(title, 1000);
+      let token = await this.stripe.showCheckoutForm(title, price);
       await this.fulfillment.processPurchase(token, productId, user.accounts[0]);
 
       this.purchased = true;

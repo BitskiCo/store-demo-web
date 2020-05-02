@@ -1,14 +1,19 @@
 <div class="card">
-  <img class="card-img-top" src={{@item.imageUrl}} alt={{@item.name}}>
+  {{!-- template-lint-disable no-inline-styles --}}
+  <img class="card-img-top object-fit-scale-down object-position-center" src={{@item.imageUrl}} alt={{@item.name}} style="max-height: 200px;">
+  {{!-- template-lint-enable no-inline-styles --}}
   <div class="card-body">
     {{#if this.purchased}}
-      <p class="text-success">Purchase Complete. Your item is now in your wallet.</p>
+      <p class="text-success text-center">Purchase Complete. Your item is now in your wallet.</p>
     {{/if}}
     {{#if this.error}}
       <p class="text-danger">{{this.error.message}}</p>
     {{/if}}
-    <h5 class="card-title">{{@item.name}}</h5>
+    <h4 class="card-title">{{@item.name}}</h4>
     <p class="card-text">{{@item.description}}</p>
-    <button type="button" class="btn btn-primary" {{on "click" this.buy}}>Buy</button>
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="h5 mb-0">${{this.price}}</p>
+      <button type="button" class="btn btn-primary" {{on "click" this.buy}}>Buy Now</button>
+    </div>
   </div>
 </div>

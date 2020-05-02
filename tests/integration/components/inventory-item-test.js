@@ -12,6 +12,6 @@ module('Integration | Component | inventory-item', function(hooks) {
 
     await render(hbs`<InventoryItem />`);
 
-    assert.equal(this.element.textContent.trim(), 'Buy');
+    assert.ok(this.element.textContent.trim().includes('Buy Now'), 'shows buy button');
   });
 });
