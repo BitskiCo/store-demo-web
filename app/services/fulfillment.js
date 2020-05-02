@@ -1,13 +1,13 @@
 import Service from '@ember/service';
 
 export default class FulfillmentService extends Service {
-  async processPurchase(token, recipient) {
+  async processPurchase(token, productId, recipient) {
     let response = await fetch('/process-transaction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ token, recipient })
+      body: JSON.stringify({ token, productId, recipient })
     });
     let json = await response.json();
 

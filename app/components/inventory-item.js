@@ -14,11 +14,12 @@ export default class InventoryItemComponent extends Component {
   @action
   async buy() {
     this.error = false;
+    let { title, productId } = this.args.item;
 
     try {
       let user = await this.bitski.getSignedInUser();
-      let token = await this.stripe.showCheckoutForm(this.args.item.title, 1000);
-      await this.fulfillment.processPurchase(token, user.accounts[0]);
+      let token = await this.stripe.showCheckoutForm(title, 1000);
+      await this.fulfillment.processPurchase(token, productId, user.accounts[0]);
 
       this.purchased = true;
     } catch (err) {
