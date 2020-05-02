@@ -2,6 +2,9 @@
 
 module.exports = {
   root: true,
+  globals: {
+    StripeCheckout: true
+  },
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,

@@ -1,8 +1,14 @@
 <div class="card">
   <img class="card-img-top" src={{@item.imageUrl}} alt={{@item.name}}>
   <div class="card-body">
+    {{#if this.purchased}}
+      <p class="text-success">Purchase Complete. Your item is now in your wallet.</p>
+    {{/if}}
+    {{#if this.error}}
+      <p class="text-danger">{{this.error.message}}</p>
+    {{/if}}
     <h5 class="card-title">{{@item.name}}</h5>
     <p class="card-text">{{@item.description}}</p>
-    <button type="button" class="btn btn-primary">Buy</button>
+    <button type="button" class="btn btn-primary" {{on "click" this.buy}}>Buy</button>
   </div>
 </div>

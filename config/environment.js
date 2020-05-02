@@ -22,9 +22,13 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    bitskiClientId: 'cf737565-7a9f-4c42-9167-3155b4a5ced8',
+    networkName: 'rinkeby',
     siteTitle: 'Bitski Wineshop',
     siteSubtitle: 'Acme Wine',
-    siteDescription: 'All wines are available for purchase and the ownership can be verified on the blockchain'
+    siteDescription: 'All wines are available for purchase and the ownership can be verified on the blockchain',
+    stripeKey: 'pk_test_kn9nsrfRpCrCoGWCFDkeoGK3',
+    stripeCheckoutImage: 'https://stripe.com/img/documentation/checkout/marketplace.png'
   };
 
   if (environment === 'development') {
