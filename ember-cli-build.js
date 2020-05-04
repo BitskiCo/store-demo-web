@@ -4,6 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
+    fingerprint: {
+      exclude: ['tokenAsset-1.png', 'tokenAsset-2.png', 'tokenAsset-3.png']
+    },
     sassOptions: {
       includePaths: [
         'node_modules/bootstrap/scss'
