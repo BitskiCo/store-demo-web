@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+let options = {
   test_page: 'tests/index.html?hidepassed',
   disable_watching: true,
   launch_in_ci: [
@@ -25,3 +25,10 @@ module.exports = {
     }
   }
 };
+
+if (process.env['REPORTER']) {
+  options['reporter'] = process.env['REPORTER'];
+  options['report_file'] = 'report.xml';
+}
+
+module.exports = options;
