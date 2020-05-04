@@ -55,5 +55,29 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  if (process.env.BITSKI_CLIENT_ID) {
+    ENV.bitskiClientId = process.env.BITSKI_CLIENT_ID;
+  }
+
+  if (process.env.SITE_TITLE) {
+    ENV.siteTitle = process.env.SITE_TITLE;
+  }
+
+  if (process.env.SITE_SUBTITLE) {
+    ENV.siteSubtitle = process.env.SITE_SUBTITLE;
+  }
+
+  if (process.env.SITE_DESCRIPTION) {
+    ENV.siteDescription = process.env.SITE_DESCRIPTION;
+  }
+
+  if (process.env.STRIPE_KEY) {
+    ENV.stripeKey = process.env.STRIPE_KEY;
+  }
+
+  if (process.env.STRIPE_IMAGE_URL) {
+    ENV.stripeCheckoutImage = process.env.STRIPE_IMAGE_URL;
+  }
+
   return ENV;
 };
