@@ -3,7 +3,7 @@ import ENV from 'store-demo/config/environment';
 
 export default class MainJumbotronComponent extends Component {
   get subtitle() {
-    return ENV.siteSubtitle;
+    return ENV.siteTitle;
   }
 
   get description() {

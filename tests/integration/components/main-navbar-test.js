@@ -12,6 +12,6 @@ module('Integration | Component | main-navbar', function(hooks) {
 
     await render(hbs`<MainNavbar />`);
 
-    assert.equal(this.element.textContent.trim(), 'Bitski Wineshop');
+    assert.ok(this.element.textContent.trim().includes('Demo'), 'Renders the header');
   });
 });

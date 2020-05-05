@@ -1,8 +1,21 @@
 import Component from '@glimmer/component';
-import ENV from 'store-demo/config/environment';
+import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class MainNavbarComponent extends Component {
-  get siteTitle() {
-    return ENV.siteTitle;
+  @service bitski;
+
+  get isLoggedIn() {
+    return this.bitski.isLoggedIn;
+  }
+
+  @action
+  logIn() {
+    this.bitski.logIn();
+  }
+
+  @action
+  logOut() {
+    this.bitski.logOut();
   }
 }

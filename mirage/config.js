@@ -14,4 +14,5 @@ export default function() {
 
   this.passthrough('/assets/inventory.json');
   this.passthrough('https://checkout.stripe.com/*');
+  this.passthrough('https://account.bitski.com/*');
 }

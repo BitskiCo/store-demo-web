@@ -1,21 +1,70 @@
+$cadet: #a5afbe;
 $indigo: #2926cf;
+$dark-text: #444a57;
+$snow: #f9fafb;
+$big-stone: #131e38;
+$porcelain: #eef0f2;
 
 // Globals
 $font-family-base: 'Inter', sans-serif;
 
+// Body
+$body-color: $dark-text;
+$body-bg: $snow;
+
+// Headings
+$headings-color: $big-stone;
+$headings-font-weight: 600;
+$headings-letter-spacing: -0.125rem;
+$h1-font-size: 3rem;
+
+// Text
+$lead-font-size: 1.125rem;
+$lead-font-weight: 700;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
 // Grid
-$grid-gutter-width: 1rem;
+$grid-gutter-width: 5rem;
 
 // Buttons
 $btn-font-weight: 600;
 $btn-border-radius: 3rem;
 $btn-border-radius-sm: 2rem;
+$btn-border-radius-lg: 3rem;
 $btn-padding-y: 0.5rem;
 $btn-padding-x: 1.5rem;
+$btn-padding-x-lg: 1.86rem;
+$btn-padding-y-lg: 0.69rem;
+$btn-line-height-lg: 1.5rem;
+$btn-letter-spacing-lg: -0.03125rem;
+
+// Navbar
+$navbar-light-color: $cadet;
+$navbar-light-hover-color: darken($navbar-light-color, 15%);
+
+// Nav
+$nav-link-font-size: 0.875rem;
+$nav-link-color: $cadet;
+$nav-link-color-active: $indigo;
+$nav-link-hover-color: darken($nav-link-color, 15%);
+$nav-link-hover-color-active: darken($nav-link-color-active, 15%);
+
+// Borders
+$border-radius: 0.625rem;
+$border-radius-lg: 1.25rem;
+
+// Badges
+$badge-font-size: 1rem;
+$badge-pill-padding-x: 0.85rem;
+$badge-padding-y: 0.75rem;
+
 
 // Theme
 $theme-colors: (
   'primary': $indigo,
+  'light': $porcelain,
 );
 
 // Set contents to full screen

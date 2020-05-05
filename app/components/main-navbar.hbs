@@ -1,3 +1,30 @@
-<nav class="navbar navbar-light bg-light">
-  <LinkTo @class="navbar-brand" @route="index">{{this.siteTitle}}</LinkTo>
+<nav class="navbar navbar-light navbar-expand-sm justify-center">
+  <LinkTo @class="navbar-brand w-lg-25" @route="index">
+    <img src="/assets/svg/bitski-logo.svg" class="mr-auto" alt="Bitski" >
+  </LinkTo>
+
+  <div class="mx-auto">
+    <h3 class="m-0 text-white px-4 py-2 rounded bg-gradient mx-auto">Demo</h3>
+  </div>
+
+  <ul class="navbar-nav justify-content-end w-lg-25">
+    {{#if this.isLoggedIn}}
+      <li class="nav-item">
+        <a class="nav-link active font-weight-bold" href="https://wallet.bitski.com">
+          View My Wallet
+        </a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-link btn btn-link border-0 ml-3" {{on "click" this.logOut}}>
+          Log Out
+        </button>
+      </li>
+    {{else}}
+      <li class="nav-item">
+        <button type="button" class="nav-link btn btn-link border-0" {{on "click" this.logIn}}>
+          Log In
+        </button>
+      </li>
+    {{/if}}
+  </ul>
 </nav>

@@ -13,7 +13,7 @@ export default class InventoryItemComponent extends Component {
 
   get price() {
     if (this.args.item) {
-      return (this.args.item.price / 100).toFixed(2);
+      return (this.args.item.price / 100).toFixed(0);
     } else {
       return '';
     }

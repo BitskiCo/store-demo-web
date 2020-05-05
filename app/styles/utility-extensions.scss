@@ -1,5 +1,15 @@
+.bg-gradient {
+  background: linear-gradient(203.76deg, #CF0BC3 7.07%, #CF0BC3 7.07%, #CF0BC3 7.07%, #FF3568 95.51%), #4100EA;
+}
+
 @include media-breakpoint-up(md) {
   .w-md-50 {
     width: 50% !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .w-lg-25 {
+    width: 25% !important;
   }
 }

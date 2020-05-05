@@ -25,7 +25,7 @@
 @import "card";
 // @import "breadcrumb";
 // @import "pagination";
-// @import "badge";
+@import "badge";
 // @import "jumbotron";
 // @import "alert";
 // @import "progress";
@@ -42,6 +42,9 @@
 // @import "print";
 
 // Extensions
+@import "button-extensions";
 @import "grid-extensions";
 @import "image-extensions";
+@import "nav-extensions";
+@import "type-extensions";
 @import "utility-extensions";

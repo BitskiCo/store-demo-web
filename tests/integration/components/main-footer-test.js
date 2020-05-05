@@ -13,6 +13,6 @@ module('Integration | Component | main-footer', function(hooks) {
     await render(hbs`<MainFooter />`);
 
     let year = (new Date()).getFullYear();
-    assert.equal(this.element.textContent.trim(), `©${year}`);
+    assert.ok(this.element.textContent.trim().includes(`©${year}`), 'Sets the proper year');
   });
 });
