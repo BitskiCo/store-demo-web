@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Store Demo</title>
-    <meta name="description" content="">
+    <meta name="description" content="Demo: Purchase NFTs via credit card">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-57x57-64e3c22a18ebe4b47427371088ae7d05.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.bitskistatic.com/images/favicons/apple-icon-60x60-f95f3ba8922bfd6830a3c58d13b009b9.png">
@@ -35,8 +35,8 @@
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/store-demo.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script>
+    <script async src="https://checkout.stripe.com/checkout.js"></script>
+    <script async>
       window.intercomSettings={app_id:'ypzoqtmj',custom_launcher_selector:'#intercom'};
       (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ypzoqtmj';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
     </script>
