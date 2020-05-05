@@ -17,6 +17,7 @@ const purgeCSS = {
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     fingerprint: {
+      extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map', 'svg'],
       exclude: ['tokenAsset-1.png', 'tokenAsset-2.png', 'tokenAsset-3.png']
     },
     postcssOptions: {
