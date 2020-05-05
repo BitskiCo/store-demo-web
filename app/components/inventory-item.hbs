@@ -1,7 +1,7 @@
 <div class="card border-0 rounded-lg">
   <span class="badge badge-pill badge-light position-absolute m-3">${{this.price}}</span>
   {{!-- template-lint-disable no-inline-styles --}}
-  <img class="card-img-top object-fit-scale-down object-position-center" src={{@item.imageUrl}} alt={{@item.name}} style="max-height: 200px;">
+  <img class="card-img-top object-fit-scale-down object-position-center mt-3" src={{@item.imageUrl}} alt={{@item.name}} style="max-height: 200px;">
   {{!-- template-lint-enable no-inline-styles --}}
   <div class="card-body">
     {{#if this.purchased}}
