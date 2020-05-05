@@ -31,7 +31,9 @@ export default class InventoryItemComponent extends Component {
 
       this.purchased = true;
     } catch (err) {
-      this.error = err;
+      if (err && err.message !== 'Sign in request was cancelled.') {
+        this.error = err;
+      }
     }
   }
 }
