@@ -9,7 +9,6 @@ export default class InventoryItemComponent extends Component {
   @service fulfillment;
 
   @tracked error;
-  @tracked purchased = false;
 
   get price() {
     if (this.args.item) {
@@ -27,9 +26,15 @@ export default class InventoryItemComponent extends Component {
     try {
       let user = await this.bitski.getSignedInUser();
       let token = await this.stripe.showCheckoutForm(title, price);
+      if (this.args.onProcessing) {
+        this.args.onProcessing();
+      }
+
       await this.fulfillment.processPurchase(token, productId, user.accounts[0]);
 
-      this.purchased = true;
+      if (this.args.onComplete) {
+        this.args.onComplete();
+      }
     } catch (err) {
       if (err && err.message !== 'Sign in request was cancelled.') {
         this.error = err;

@@ -5,6 +5,8 @@ $snow: #f9fafb;
 $big-stone: #131e38;
 $porcelain: #eef0f2;
 $melrose: #9c9cff;
+$mint: #75ff93;
+$salem: #139530;
 
 // Globals
 $font-family-base: 'Inter', sans-serif;
@@ -18,7 +20,7 @@ $body-bg: $snow;
 // Headings
 $headings-color: $big-stone;
 $headings-font-weight: 600;
-$headings-letter-spacing: -0.125rem;
+$headings-letter-spacing: -0.09375rem;
 $h1-font-size: 3rem;
 
 // Text
@@ -27,11 +29,25 @@ $lead-font-weight: 700;
 $font-weight-normal: 500;
 $font-weight-bold: 600;
 $font-weight-bolder: 700;
+$letter-spacing-xs: -0.125rem;
 $letter-spacing-sm: -0.0625rem;
 $letter-spacing-lg: 0.0625rem;
 
 // Grid
 $grid-gutter-width: 5rem;
+
+// Toast
+$toast-max-width: 545px;
+$toast-color: $salem;
+$toast-border-width: 0;
+$toast-background-color: $mint;
+$toast-header-background-color: $mint;
+$toast-padding-y: 1.35rem;
+$toast-box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+
+// Transitions
+$transition-fade: opacity 0.25s ease-in-out;
+$transition-bounce-in: 0.25s ease-in-out;
 
 // Card
 $card-box-shadow: 0 0 10px 0 rgba(165, 175, 190, 0.08);
@@ -72,6 +88,7 @@ $badge-padding-y: 0.75rem;
 // Theme
 $theme-colors: (
   'primary': $indigo,
+  'green': $salem,
   'secondary': $melrose,
   'light': $porcelain,
 );
