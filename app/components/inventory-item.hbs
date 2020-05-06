@@ -1,7 +1,7 @@
 <div class="card border-0 rounded-lg">
   <span class="badge badge-pill badge-light position-absolute m-3">${{this.price}}</span>
   {{!-- template-lint-disable no-inline-styles --}}
-  <img class="card-img-top object-fit-scale-down object-position-center mt-3" src={{@item.imageUrl}} alt={{@item.name}} style="max-height: 200px;">
+  <img class="card-img-top object-fit-scale-down object-position-center mt-3 card-cta" src={{@item.imageUrl}} alt={{@item.name}} style="max-height: 200px;">
   {{!-- template-lint-enable no-inline-styles --}}
   <div class="card-body">
     {{#if this.purchased}}
@@ -12,8 +12,6 @@
     {{/if}}
     <p class="card-title lead">{{@item.name}}</p>
     <p class="card-text small mb-4">{{@item.description}}</p>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary btn-lg" {{on "click" this.buy}}>Buy Now</button>
-    </div>
+    <button type="button" class="btn btn-primary btn-lg bg-gradient-dark w-100" {{on "click" this.buy}}>Buy Now</button>
   </div>
 </div>
