@@ -7,6 +7,14 @@
 }
 
 @include media-breakpoint-up(md) {
+  .bg-md-transparent {
+    background-color: transparent !important;
+  }
+
+  .border-md-0 {
+    border: none !important;
+  }
+
   .w-md-50 {
     width: 50% !important;
   }

@@ -2,10 +2,9 @@
   column-gap: $grid-gutter-width;
   grid-gap: $grid-gutter-width;
   display: grid;
-  grid-auto-rows: 1fr;
 }
 
-.grid::before {
+.grid-row::before {
   content: '';
   width: 0;
   padding-bottom: 100%;
@@ -13,12 +12,28 @@
   grid-column: 1 / 1;
 }
 
-.grid > *:first-child {
+.grid-row > *:first-child {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
 }
 
+.grid-cols-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-gap-0 {
+  grid-gap: 0;
+}
+
+.grid-cols-3-fill {
+  grid-column: span 3;
+}
+
 @include media-breakpoint-up(md) {
+  .grid-cols-3-md-single {
+    grid-column: span 1;
+  }
+
   .grid-cols-md-2 {
     grid-template-columns: 1fr 1fr;
   }

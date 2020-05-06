@@ -12,6 +12,9 @@ $salem: #139530;
 $font-family-base: 'Inter', sans-serif;
 $enable-shadows: true;
 $enable-responsive-font-sizes: true;
+$hover-border: none;
+$active-border: none;
+$btn-active-box-shadow: unset;
 
 // Body
 $body-color: $dark-text;
@@ -68,6 +71,8 @@ $btn-letter-spacing-lg: -0.03125rem;
 // Navbar
 $navbar-light-color: $cadet;
 $navbar-light-hover-color: darken($navbar-light-color, 15%);
+$navbar-light-toggler-icon-bg: url("/assets/svg/navbar-toggler.svg") !default;
+$navbar-light-toggler-border-color: transparent !default;
 
 // Nav
 $nav-link-font-size: 0.875rem;
@@ -92,6 +97,14 @@ $theme-colors: (
   'secondary': $melrose,
   'light': $porcelain,
 );
+
+.btn:focus,
+.btn:active,
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 // Set contents to full screen
 body,
