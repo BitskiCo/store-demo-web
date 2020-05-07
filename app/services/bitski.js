@@ -27,7 +27,7 @@ export default class BitskiService extends Service {
     if (this.isLoggedIn) {
       return this._bitski.getUser();
     } else {
-      return this._bitski.signIn();
+      return this.logIn();
     }
   }
 }
