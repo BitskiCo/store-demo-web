@@ -15,4 +15,5 @@ export default function() {
   this.passthrough('/inventory/tokens.json');
   this.passthrough('https://checkout.stripe.com/*');
   this.passthrough('https://account.bitski.com/*');
+  this.passthrough('https://api.bitski.com/*');
 }
