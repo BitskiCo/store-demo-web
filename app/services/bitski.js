@@ -12,11 +12,34 @@ export default class BitskiService extends Service {
     this.isLoggedIn = this._bitski.authStatus !== AuthenticationStatus.NotConnected;
   }
 
-  logIn() {
-    return this._bitski.signIn().then((user) => {
-      this.isLoggedIn = true;
+  async logIn() {
+    let user = await this._bitski.signIn();
+    this.isLoggedIn = true;
+
+    if (user.accounts && user.accounts.length > 0) {
       return user;
+    } else {
+      // Sessions do not always include accounts, e.g. newly created user accounts.
+      let accessToken = await this._bitski.getCurrentAccessToken();
+      let accounts = await this.fetchAccounts(accessToken);
+      user.accounts = accounts;
+      this._bitski.authProvider.userStore.set(user);
+      return user;
+    }
+  }
+
+  async fetchAccounts(accessToken) {
+    let response = await fetch('https://api.bitski.com/v1/web3/mainnet', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      },
+      body: '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
     });
+    let json = await response.json();
+
+    return json.result;
   }
 
   logOut() {
