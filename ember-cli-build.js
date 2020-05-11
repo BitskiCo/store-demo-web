@@ -2,6 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const isProduction = EmberApp.env() === 'production';
+const sassTypes = require('sass').types;
 const purgeCSS = {
   module: require('@fullhuman/postcss-purgecss'),
   options: {
@@ -13,6 +14,51 @@ const purgeCSS = {
     defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
   }
 };
+
+// Default light theme
+let storeTheme = {
+  'primary': '#2926cf',
+  'secondary': '#9c9cff',
+  'logo-color': '#2926cf',
+  'headings-color': '#131e38',
+  'btn-color': '#ffffff',
+  'link-color-active': '#2926cf',
+  'footer-color': '#6c757d',
+  'background': '#f9fafb',
+};
+
+// Add optional themes, currently only supports dark
+if (process.env.THEME_NAME === 'dark') {
+  storeTheme = {
+    'primary': '#2926cf',
+    'secondary': '#91fcfd',
+    'logo-color': '#ffffff',
+    'headings-color': '#f8faff',
+    'btn-color': '#138080',
+    'link-color-active': '#68ffff',
+    'footer-color': '#f3f5f6',
+    'background': '#000000',
+    'background-img': '/assets/images/bg-dark.jpg'
+  };
+}
+
+// Build sass theme map from theme
+const sassTheme = new sassTypes.Map(Object.keys(storeTheme).length);
+let i = 0;
+for (const key in storeTheme) {
+  // Keys are always strings
+  sassTheme.setKey(i, new sassTypes.String(key));
+  // Values can be colors or strings
+  let value = storeTheme[key];
+  let sassValue;
+  if (value[0] === '#') {
+    sassValue = new sassTypes.Color(parseInt(`ff${value.replace('#', '')}`, 16));
+  } else {
+    sassValue = new sassTypes.String(value);
+  }
+  sassTheme.setValue(i, sassValue);
+  i++;
+}
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
@@ -29,6 +75,11 @@ module.exports = function(defaults) {
           {
             module: require('@csstools/postcss-sass'),
             options: {
+              functions: {
+                'theme': function () {
+                  return sassTheme;
+                },
+              },
               includePaths: [
                 'node_modules/bootstrap/scss',
               ],
