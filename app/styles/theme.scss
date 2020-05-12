@@ -1,10 +1,6 @@
 $cadet: #a5afbe;
-$indigo: #2926cf;
 $dark-text: #444a57;
-$snow: #f9fafb;
-$big-stone: #131e38;
 $porcelain: #eef0f2;
-$melrose: #9c9cff;
 $mint: #75ff93;
 $salem: #139530;
 
@@ -16,12 +12,15 @@ $hover-border: none;
 $active-border: none;
 $btn-active-box-shadow: unset;
 
+// Store meta-theme
+$store-theme: theme();
+
 // Body
 $body-color: $dark-text;
-$body-bg: $snow;
+$body-bg: map-get($store-theme, 'background');
 
 // Headings
-$headings-color: $big-stone;
+$headings-color: map-get($store-theme, 'headings-color');
 $headings-font-weight: 600;
 $headings-letter-spacing: -0.09375rem;
 $h1-font-size: 3rem;
@@ -77,7 +76,7 @@ $navbar-light-toggler-border-color: transparent !default;
 // Nav
 $nav-link-font-size: 0.875rem;
 $nav-link-color: $cadet;
-$nav-link-color-active: $indigo;
+$nav-link-color-active: map-get($store-theme, 'link-color-active');
 $nav-link-hover-color: darken($nav-link-color, 15%);
 $nav-link-hover-color-active: darken($nav-link-color-active, 15%);
 
@@ -92,9 +91,9 @@ $badge-padding-y: 0.75rem;
 
 // Theme
 $theme-colors: (
-  'primary': $indigo,
+  'primary': map-get($store-theme, 'primary'),
+  'secondary': map-get($store-theme, 'secondary'),
   'green': $salem,
-  'secondary': $melrose,
   'light': $porcelain,
 );
 
@@ -110,6 +109,11 @@ button:active {
 body,
 html {
   height: 100%;
+
+  @if map-get($store-theme, 'background-img') != null {
+    background: url(map-get($store-theme, 'background-img')) no-repeat center center fixed;
+    background-size: cover;
+  }
 }
 
 body {

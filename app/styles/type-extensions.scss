@@ -37,6 +37,18 @@ h6,
   font-size: 1.75rem;
 }
 
+.logo-color {
+  fill: map-get($store-theme, 'logo-color');
+}
+
+.headings-color {
+  color: map-get($store-theme, 'headings-color');
+}
+
+.footer-color {
+  color: map-get($store-theme, 'footer-color');
+}
+
 @include media-breakpoint-up(md) {
   .text-md-lg {
     font-size: $font-size-lg;

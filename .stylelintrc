@@ -5,6 +5,8 @@
   ],
   "rules": {
     "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true
+    "scss/at-rule-no-unknown": true,
+    "block-closing-brace-newline-after": ["always", { ignoreAtRules: ["if", "else"] }],
+    "at-rule-empty-line-before": null
   }
 }
