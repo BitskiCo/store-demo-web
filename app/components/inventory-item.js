@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import ENV from 'store-demo/config/environment';
 
 export default class InventoryItemComponent extends Component {
   @service bitski;
@@ -25,15 +26,22 @@ export default class InventoryItemComponent extends Component {
 
     try {
       let user = await this.bitski.getSignedInUser();
-      let token = await this.stripe.showCheckoutForm(title, price);
-      if (this.args.onProcessing) {
-        this.args.onProcessing();
-      }
 
-      await this.fulfillment.processPurchase(token, productId, user.accounts[0]);
+      if (ENV.brandedCheckout) {
+        // Either show branded checkout form
+        this.args.onShowCheckoutForm(this.args.item);
+      } else {
+        // Or show default Stripe checkout form
+        let token = await this.stripe.showCheckoutForm(title, price);
+        if (this.args.onProcessing) {
+          this.args.onProcessing();
+        }
 
-      if (this.args.onComplete) {
-        this.args.onComplete();
+        await this.fulfillment.processPurchase(token, productId, user.accounts[0]);
+
+        if (this.args.onComplete) {
+          this.args.onComplete();
+        }
       }
     } catch (err) {
       if (err && err.message !== 'Sign in request was cancelled.') {
