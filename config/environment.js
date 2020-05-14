@@ -22,6 +22,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    brandedCheckout: true,
     bitskiClientId: 'cf737565-7a9f-4c42-9167-3155b4a5ced8',
     networkName: 'rinkeby',
     siteTitle: 'Acme Wine',
@@ -52,6 +53,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+  }
+
+  if (process.env.BRANDED_CHECKOUT) {
+    ENV.brandedCheckout = process.env.BRANDED_CHECKOUT;
   }
 
   if (process.env.BITSKI_CLIENT_ID) {

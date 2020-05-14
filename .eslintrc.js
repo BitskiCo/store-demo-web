@@ -3,6 +3,7 @@
 module.exports = {
   root: true,
   globals: {
+    Stripe: true,
     StripeCheckout: true
   },
   parser: 'babel-eslint',

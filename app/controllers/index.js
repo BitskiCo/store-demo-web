@@ -7,13 +7,28 @@ const NEXT_BLOCK_DELAY = 2000;
 const COMPLETE_NOTICE_TIMEOUT = 5000;
 
 export default class IndexController extends Controller {
+  @tracked selectedItem;
+  @tracked showCheckoutForm = false;
   @tracked showProcessing = false;
   @tracked showComplete = false;
   @tracked fadeOutComplete = false;
 
   @action
+  onShowCheckoutForm(item) {
+    this.selectedItem = item;
+    this.showCheckoutForm = true;
+  }
+
+  @action
+  onHideCheckoutForm() {
+    this.selectedItem = null;
+    this.showCheckoutForm = false;
+  }
+
+  @action
   onProcessing() {
     this.showProcessing = true;
+    this.showCheckoutForm = false;
   }
 
   @action
