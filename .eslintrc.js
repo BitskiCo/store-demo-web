@@ -31,6 +31,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }]
   },
+  ignorePatterns: ['backend'],
   overrides: [
     // node files
     {

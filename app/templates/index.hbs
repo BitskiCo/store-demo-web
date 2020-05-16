@@ -7,7 +7,11 @@
       <div class="toast-header justify-content-center">
         <p class="h2 font-weight-bolder text-green mb-0">
           {{#if this.showComplete}}
-            <a href="https://wallet.bitski.com" class="text-green">Complete! View in Wallet</a>
+            {{#if this.brandedLogin}}
+              <LinkTo @route="items" class="text-green">Complete! View in Wallet</LinkTo>
+            {{else}}
+              <a href="https://wallet.bitski.com" class="text-green">Complete! View in Wallet</a>
+            {{/if}}
           {{else}}
             Purchase Processing
           {{/if}}

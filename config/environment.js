@@ -22,13 +22,15 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    brandedLogin: false,
     brandedCheckout: true,
     bitskiClientId: 'cf737565-7a9f-4c42-9167-3155b4a5ced8',
     networkName: 'rinkeby',
     siteTitle: 'Acme Wine',
     siteDescription: 'All wines are available for purchase and the ownership can be verified on the blockchain',
     stripeKey: 'pk_test_kn9nsrfRpCrCoGWCFDkeoGK3',
-    stripeCheckoutImage: 'https://stripe.com/img/documentation/checkout/marketplace.png'
+    stripeCheckoutImage: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+    openseaApiKey: 'ec19a079a8094fd19d58a7b83c8acb3f'
   };
 
   if (environment === 'development') {
@@ -37,6 +39,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    // ENV['ember-cli-mirage'] = {
+    //   enabled: false
+    // };
   }
 
   if (environment === 'test') {
@@ -53,6 +58,10 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+  }
+
+  if (process.env.BRANDED_LOGIN) {
+    ENV.brandedCheckout = process.env.BRANDED_LOGIN;
   }
 
   if (process.env.BRANDED_CHECKOUT) {
@@ -77,6 +86,10 @@ module.exports = function(environment) {
 
   if (process.env.STRIPE_IMAGE_URL) {
     ENV.stripeCheckoutImage = process.env.STRIPE_IMAGE_URL;
+  }
+
+  if (process.env.OPENSEA_API_KEY) {
+    ENV.openseaApiKey = process.env.OPENSEA_API_KEY;
   }
 
   return ENV;

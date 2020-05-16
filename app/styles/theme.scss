@@ -33,10 +33,12 @@ $font-weight-bold: 600;
 $font-weight-bolder: 700;
 $letter-spacing-xs: -0.125rem;
 $letter-spacing-sm: -0.0625rem;
+$letter-spacing-md: 0;
 $letter-spacing-lg: 0.0625rem;
 
 // Grid
 $grid-gutter-width: 5rem;
+$grid-gutter-width-sm: 1rem;
 
 // Toast
 $toast-max-width: 545px;
@@ -91,6 +93,7 @@ $badge-padding-y: 0.75rem;
 
 // Modals
 $modal-md: 350px;
+$modal-lg: 450px;
 
 // Theme
 $theme-colors: (

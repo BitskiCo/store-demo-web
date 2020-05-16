@@ -6,10 +6,11 @@ import ENV from 'store-demo/config/environment';
 export default class BitskiService extends Service {
   @tracked isLoggedIn;
 
-  constructor() {
-    super(...arguments);
+  initialize() {
     this._bitski = new Bitski(ENV.bitskiClientId, window.location.origin + '/redirect-callback');
     this.isLoggedIn = this._bitski.authStatus !== AuthenticationStatus.NotConnected;
+
+    return Promise.resolve(this.isLoggedIn);
   }
 
   async logIn() {
