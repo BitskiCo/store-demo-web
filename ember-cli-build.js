@@ -37,8 +37,7 @@ if (process.env.THEME_NAME === 'dark') {
     'btn-color': '#138080',
     'link-color-active': '#68ffff',
     'footer-color': '#f3f5f6',
-    'background': '#000000',
-    'background-img': '/assets/images/bg-dark.jpg'
+    'background': '#444a57',
   };
 }
 
