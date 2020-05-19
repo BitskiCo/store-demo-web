@@ -61,7 +61,7 @@ module.exports = function(environment) {
   }
 
   if (process.env.BRANDED_LOGIN) {
-    ENV.brandedCheckout = process.env.BRANDED_LOGIN;
+    ENV.brandedLogin = process.env.BRANDED_LOGIN;
   }
 
   if (process.env.BRANDED_CHECKOUT) {
