@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 import ENV from 'store-demo/config/environment';
 
 export default class InventoryItemComponent extends Component {
-  @service bitski;
+  @service auth;
   @service stripe;
   @service fulfillment;
 
@@ -25,7 +25,7 @@ export default class InventoryItemComponent extends Component {
     let { title, productId, price } = this.args.item;
 
     try {
-      let user = await this.bitski.getSignedInUser();
+      let user = await this.auth.getSignedInUser();
 
       if (ENV.brandedCheckout) {
         // Either show branded checkout form

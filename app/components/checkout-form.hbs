@@ -1,6 +1,6 @@
 <form action="/charge" method="post" id="payment-form" {{did-insert this.didInsert}} {{on "submit" this.submit}} class="d-flex flex-column">
   {{#if this.error}}
-    <div class="text-danger text-center" role="alert">{{this.error}}</div>
+    <div class="text-danger text-center px-3" role="alert">{{this.error}}</div>
   {{/if}}
 
   <div class="form-row my-3">

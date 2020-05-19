@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 import ENV from 'store-demo/config/environment';
 
 export default class CheckoutFormComponent extends Component {
-  @service bitski;
+  @service auth;
   @service fulfillment;
   @tracked cardComplete;
   @tracked isSubmitting;
@@ -48,23 +48,21 @@ export default class CheckoutFormComponent extends Component {
         this.error = result.error.message;
         this.isSubmitting = false;
       } else {
-        if (this.args.onProcessing) {
-          this.args.onProcessing();
-        }
-
-        this.bitski.getSignedInUser()
+        this.auth.getSignedInUser()
           .then(user => {
             return this.fulfillment.processPurchase(result.token, this.args.item.productId, user.accounts[0]);
           })
-          .then(() => this.args.onComplete())
+          .then(() => {
+            this.args.onProcessing();
+            this.args.onComplete();
+          })
           .catch(err => {
             if (err && err.message !== 'Sign in request was cancelled.') {
               this.error = err.message;
             }
-          })
-          .finally(() => this.isSubmitting = false);
+          });
       }
-    });
+    }).catch(err => this.error = err.message).finally(() => this.isSubmitting = false);
   }
 
   @action

@@ -27,6 +27,15 @@
 
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/store-demo.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <style type="text/css">
+      .firebaseui-card-header { display: none; }
+      .mdl-shadow--2dp { box-shadow: none; }
+      .firebaseui-container { max-width: 100%; }
+      .firebaseui-card-actions { padding-bottom: 10px; }
+      .firebaseui-form-actions button { border-radius: 3rem; }
+      .mdl-button--raised.mdl-button--colored { background-color: #2926cf; }
+    </style>
 
     {{content-for "head-footer"}}
   </head>

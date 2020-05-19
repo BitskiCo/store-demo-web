@@ -5,7 +5,7 @@
   {{!-- template-lint-enable no-inline-styles --}}
   <div class="card-body d-flex flex-column">
     {{#if this.error}}
-      <p class="text-danger">{{this.error.message}}</p>
+      <p class="text-danger px-3">{{this.error.message}}</p>
     {{/if}}
     <p class="card-title lead">{{@item.name}}</p>
     <p class="card-text small mb-4">{{@item.description}}</p>
