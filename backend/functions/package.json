@@ -14,10 +14,13 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "bignumber.js": "^9.0.0",
     "bitski-node": "^0.7.3",
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.6.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "stripe": "^8.53.0",
+    "web3": "^1.2.8"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
